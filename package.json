@@ -1,0 +1,27 @@
+{
+  "name": "embedMessages",
+  "version": "1.0.0",
+  "description": "A plugin for Discord ModMail by Dragory that allows embeds to be used",
+  "main": "./embedMessages.js",
+  "scripts": {
+    "lint": "eslint --fix ./embedMessages.js",
+    "format": "prettier --write ./embedMessages.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MMPlugins/EmbedMessages.git"
+  },
+  "keywords": [
+    "modmail",
+    "plugin"
+  ],
+  "author": "DarkView",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/MMPlugins/EmbedMessages/issues"
+  },
+  "devDependencies": {
+    "eslint": "^7.25.0",
+    "prettier": "^2.2.1"
+  }
+}

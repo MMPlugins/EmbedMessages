@@ -1,1 +1,1 @@
-EmbedMessages
+# If you want to help me with documenting this, ping me on the MM support server

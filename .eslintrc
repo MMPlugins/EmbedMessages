@@ -1,0 +1,17 @@
+{
+  "root": true,
+
+  "parserOptions": {
+    "ecmaVersion": 10,
+    "sourceType": "module"
+  },
+
+  "env": {
+    "node": true
+  },
+
+  "rules": {
+    "space-infix-ops": "error",
+    "no-shadow": "error"
+  }
+}
