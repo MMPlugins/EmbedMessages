@@ -26,8 +26,8 @@ If you want to change an option, simply copy and paste the corresponding line in
 ## Valid values
 ### Toggles
 Any setting that ends in `Enabled` is a toggle.  
-Like regular on/off settings, these take any truthy or falsy values.
-Truthy: `on`, `1`, `true`
+Like regular on/off settings, these take any truthy or falsy values.  
+Truthy: `on`, `1`, `true`  
 Falsy: `off`, `0`, `false`, `null`
 
 ### Colors
