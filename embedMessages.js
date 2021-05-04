@@ -2,7 +2,6 @@ module.exports = async function ({ config, bot, formats }) {
   const moment = require("moment");
   const pluginVersion = "1.0.0";
   const KEY = "em";
-  const defaultFormatter = formats.formatters.formatLog;
   const truthyValues = ["on", "1", "true"];
   const falsyValues = ["off", "0", "false", "null"];
   const pfpMap = new Map();
@@ -418,4 +417,5 @@ module.exports = async function ({ config, bot, formats }) {
     formats.setSystemThreadMessageFormatter(systemToStaffFormatter);
   }
   //#endregion
+  log(`Version ${pluginVersion} loaded`);
 };
