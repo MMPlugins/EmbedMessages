@@ -114,9 +114,9 @@ module.exports = async function ({ config, bot, formats }) {
 
     // System -> Any
     [SETTING_NAMES.SYSTEM_USER_DM_ENABLED, true],
-    [SETTING_NAMES.SYSTEM_USER_DM_COLOR, parseColor("#7289DA")],
+    [SETTING_NAMES.SYSTEM_USER_DM_COLOR, parseColor("#5865F2")],
     [SETTING_NAMES.SYSTEM_USER_THREAD_ENABLED, true],
-    [SETTING_NAMES.SYSTEM_USER_THREAD_COLOR, parseColor("#7289DA")],
+    [SETTING_NAMES.SYSTEM_USER_THREAD_COLOR, parseColor("#5865F2")],
     [SETTING_NAMES.SYSTEM_STAFF_ENABLED, true],
     [SETTING_NAMES.SYSTEM_STAFF_COLOR, parseColor("#1AA4BC")],
   ]);
