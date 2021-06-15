@@ -195,7 +195,7 @@ module.exports = async function ({ config, bot, formats }) {
           url: threadMessage.attachments[0],
         };
       } else {
-        embed.description += `\n${link}`;
+        embed.description += `\n${threadMessage.attachments[0]}`;
       }
     } else {
       for (const link of threadMessage.attachments) {
@@ -241,7 +241,7 @@ module.exports = async function ({ config, bot, formats }) {
           url: threadMessage.attachments[0],
         };
       } else {
-        embed.description += `\n${link}`;
+        embed.description += `\n${threadMessage.attachments[0]}`;
       }
     } else {
       for (const link of threadMessage.attachments) {
@@ -275,7 +275,7 @@ module.exports = async function ({ config, bot, formats }) {
           url: threadMessage.attachments[0],
         };
       } else {
-        embed.description += `\n${link}`;
+        embed.description += `\n${threadMessage.attachments[0]}`;
       }
     } else {
       for (const link of threadMessage.attachments) {
@@ -308,7 +308,7 @@ module.exports = async function ({ config, bot, formats }) {
           url: threadMessage.attachments[0],
         };
       } else {
-        embed.description += `\n${link}`;
+        embed.description += `\n${threadMessage.attachments[0]}`;
       }
     } else {
       for (const link of threadMessage.attachments) {
@@ -341,7 +341,7 @@ module.exports = async function ({ config, bot, formats }) {
           url: threadMessage.attachments[0],
         };
       } else {
-        embed.description += `\n${link}`;
+        embed.description += `\n${threadMessage.attachments[0]}`;
       }
     } else {
       for (const link of threadMessage.attachments) {
@@ -374,7 +374,7 @@ module.exports = async function ({ config, bot, formats }) {
           url: threadMessage.attachments[0],
         };
       } else {
-        embed.description += `\n${link}`;
+        embed.description += `\n${threadMessage.attachments[0]}`;
       }
     } else {
       for (const link of threadMessage.attachments) {
