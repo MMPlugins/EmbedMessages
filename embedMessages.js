@@ -14,6 +14,8 @@ module.exports = async function ({ config, bot, formats }) {
   // Accepts 100,100,100 and 100 100 100
   const isRgb = /^(\d{1,3})\D+(\d{1,3})\D+(\d{1,3})$/;
 
+  const mentionRegex = /<@.?(\d{17,19})>/g;
+
   /**
    * Parses a color from the input string. The following formats are accepted:
    * - #HEXVALUE
@@ -382,11 +384,18 @@ module.exports = async function ({ config, bot, formats }) {
       }
     }
 
+    // We can't directly join the matched array since that results in "@Dark,108552944961454080"
+    const foundMentions = threadMessage.body.matchAll(mentionRegex);
+    const properMentions = [];
+    for (const men of foundMentions) {
+      properMentions.push(men[0]);
+    }
+
     if (config.threadTimestamps) {
       embed.timestamp = moment().utc().toISOString();
     }
 
-    return { embed };
+    return { content: properMentions.join(" "), embed, allowedMentions: {users: true, roles: true, everyone: true} };
   };
 
   // Reset the pfpMap every hour or so, we dont want outdated pfp's to stay forever
