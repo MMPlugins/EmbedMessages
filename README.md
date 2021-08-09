@@ -1,5 +1,5 @@
 ## A plugin for [Dragory's ModMail](https://github.com/dragory/modmailbot) that changes messages to embeds  
-**Currently on Version 1.0**  
+**Currently on Version 1.1**  
 Plugin written and maintained by [DarkView](https://github.com/DarkView) (Dark#1010 on Discord)  
 
 ## Setup
