@@ -172,12 +172,12 @@ module.exports = async function ({ config, bot, formats }) {
 
   const replyToUserFormatter = function (threadMessage) {
     const userId = threadMessage.user_id;
-    const roleName = threadMessage.role_name || config.fallbackRoleName;
+    const roleName = threadMessage.role_name || config.fallbackRoleName || "";
     const embed = { description: threadMessage.body, color: settings.get(SETTING_NAMES.STAFF_REPLY_DM_COLOR) };
 
     if (!threadMessage.is_anonymous) {
       embed.author = {
-        name: `${threadMessage.user_name} (${roleName})`,
+        name: `${threadMessage.user_name} ${roleName != "" ? `(${roleName})` : ""}`.trim(),
         icon_url: getPfp(userId),
       };
     } else {
@@ -214,7 +214,7 @@ module.exports = async function ({ config, bot, formats }) {
 
   const replyInThreadFormatter = function (threadMessage) {
     const userId = threadMessage.user_id;
-    const roleName = threadMessage.role_name || config.fallbackRoleName;
+    const roleName = threadMessage.role_name || config.fallbackRoleName || "";
     const embed = {
       description: threadMessage.body,
       color: settings.get(SETTING_NAMES.STAFF_REPLY_THREAD_COLOR),
@@ -223,12 +223,12 @@ module.exports = async function ({ config, bot, formats }) {
 
     if (!threadMessage.is_anonymous) {
       embed.author = {
-        name: `${threadMessage.user_name} (${roleName})`,
+        name: `${threadMessage.user_name} ${roleName != "" ? `(${roleName})` : ""}`.trim(),
         icon_url: getPfp(userId),
       };
     } else {
       embed.author = {
-        name: `${roleName} (${threadMessage.user_name}) `,
+        name: `${roleName} (${threadMessage.user_name})`.trim(),
         icon_url: bot.user.avatarURL,
       };
     }
