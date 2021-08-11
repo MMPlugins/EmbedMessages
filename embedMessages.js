@@ -1,6 +1,6 @@
 module.exports = async function ({ config, bot, formats }) {
   const moment = require("moment");
-  const pluginVersion = "1.0.0";
+  const pluginVersion = "1.1.1";
   const KEY = "em";
   const truthyValues = ["on", "1", "true"];
   const falsyValues = ["off", "0", "false", "null"];
