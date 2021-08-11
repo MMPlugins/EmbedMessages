@@ -1,6 +1,6 @@
 module.exports = async function ({ config, bot, formats }) {
   const moment = require("moment");
-  const pluginVersion = "1.1.1";
+  const pluginVersion = "1.1.2";
   const KEY = "em";
   const truthyValues = ["on", "1", "true"];
   const falsyValues = ["off", "0", "false", "null"];
@@ -99,6 +99,9 @@ module.exports = async function ({ config, bot, formats }) {
     SYSTEM_USER_THREAD_COLOR: "systemReplyThreadColor",
     SYSTEM_STAFF_ENABLED: "systemStaffEnabled",
     SYSTEM_STAFF_COLOR: "systemStaffColor",
+
+    // Miscellaneous Settings
+    CUSTOM_SYSTEM_NAME: "systemName",
   });
 
   // Init with defaults
@@ -121,6 +124,9 @@ module.exports = async function ({ config, bot, formats }) {
     [SETTING_NAMES.SYSTEM_USER_THREAD_COLOR, parseColor("#5865F2")],
     [SETTING_NAMES.SYSTEM_STAFF_ENABLED, true],
     [SETTING_NAMES.SYSTEM_STAFF_COLOR, parseColor("#1AA4BC")],
+
+    // Miscellaneous Settings
+    [SETTING_NAMES.CUSTOM_SYSTEM_NAME, "System"],
   ]);
 
   // Load config settings
@@ -144,9 +150,14 @@ module.exports = async function ({ config, bot, formats }) {
         } else {
           settings.set(name, parsedColor);
         }
+      } else {
+        settings.set(name, override);
       }
     }
   }
+  
+  // Do auto-value checks on boot instead of once every message
+  const systemName = settings.get(SETTING_NAMES.CUSTOM_SYSTEM_NAME).toLowerCase() === "$botname" ? bot.user.username : settings.get(SETTING_NAMES.CUSTOM_SYSTEM_NAME);
 
   /**
    * Returns pfp url for userId
@@ -296,7 +307,7 @@ module.exports = async function ({ config, bot, formats }) {
     const embed = { description: threadMessage.body, color: settings.get(SETTING_NAMES.SYSTEM_USER_DM_COLOR) };
 
     embed.author = {
-      name: "System",
+      name: systemName,
       icon_url: bot.user.avatarURL,
     };
 
@@ -329,7 +340,7 @@ module.exports = async function ({ config, bot, formats }) {
     const embed = { description: threadMessage.body, color: settings.get(SETTING_NAMES.SYSTEM_USER_THREAD_COLOR) };
 
     embed.author = {
-      name: "System",
+      name: systemName,
       icon_url: bot.user.avatarURL,
     };
 
@@ -362,7 +373,7 @@ module.exports = async function ({ config, bot, formats }) {
     const embed = { description: threadMessage.body, color: settings.get(SETTING_NAMES.SYSTEM_STAFF_COLOR) };
 
     embed.author = {
-      name: "System",
+      name: systemName,
       icon_url: bot.user.avatarURL,
     };
 
