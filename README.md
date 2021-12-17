@@ -20,7 +20,7 @@ If you have found a bug, please report it at the [issues page for the plugin](ht
 You can also find the plugin author (Dark#1010) on the [official support discord](https://discord.gg/vRuhG9R) in case you have any specific questions.
 ### Feature Requests
 If you want to request or suggest a feature, open an issue on the [plugins issue page](https://github.com/MMPlugins/EmbedMessages/issues)!
-In case the feature you want to request is outside of the scope of this plugin (anything not to do with reactions creating threads) please use the `#plugin-requests` channel on the [official support discord](https://discord.gg/vRuhG9R).
+In case the feature you want to request is outside of the scope of this plugin (anything not to do with messages being embeds) please use the `#plugin-requests` channel on the [official support discord](https://discord.gg/vRuhG9R).
 
 ## Commands
 This plugin has no commands at the moment.
